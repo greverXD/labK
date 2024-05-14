@@ -6,29 +6,29 @@ function adminer_object() {
 	
 	  
 	  function permanentLogin($i = false) {
-		// key used for permanent login
+		
 		return 'e911585d6124448598500b01b1a6cd4f';
 	  }
 	  
 	  function credentials() {
-		// server, username and password for connecting to database
+	
 		return array('localhost', 'ODBC', '');
 	  }
 	  
 
 	  
 	  function login($login, $password) {
-		// validate user submitted credentials
+	
 		return ($login == 'admin' && $password == '13decdec');
 	  }
 	  
 	  function tableName($tableStatus) {
-		// tables without comments would return empty string and will be ignored by Adminer
+		
 		return h($tableStatus['Comment']);
 	  }
 	  
 	  function fieldName($field, $order = 0) {
-		// only columns with comments will be displayed and only the first five in select
+		
 		return ($order <= 5 && !preg_match('~_(md5|sha1)$~', $field['field']) ? h($field['comment']) : '');
 	  }
 	  
@@ -37,6 +37,15 @@ function adminer_object() {
 	return new AdminerSoftware;
   }
   
+
+
+  
+  Kalinin
+
+
+
+
+
 adminer_errors($Ac,$Cc){return!!preg_match('~^(Trying to access array offset on value of type null|Undefined array key)~',$Cc);}error_reporting(6135);set_error_handler('adminer_errors',E_WARNING);$Yc=!preg_match('~^(unsafe_raw)?$~',ini_get("filter.default"));if($Yc||ini_get("filter.default_flags")){foreach(array('_GET','_POST','_COOKIE','_SERVER')as$X){$Fi=filter_input_array(constant("INPUT$X"),FILTER_UNSAFE_RAW);if($Fi)$$X=$Fi;}}if(function_exists("mb_internal_encoding"))mb_internal_encoding("8bit");function
 connection(){global$g;return$g;}function
 adminer(){global$b;return$b;}function
